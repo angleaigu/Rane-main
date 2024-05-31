@@ -30,6 +30,7 @@ public class player_moveset : MonoBehaviour
     private Transform _transform;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private Animator _Animator;
 
     /* --- State --- */
     private bool _IsGrounded;
@@ -75,11 +76,15 @@ public class player_moveset : MonoBehaviour
         _Jump = _player_manager.Player.Jump;
 
         Coin_Amount = 0;
+
+       
     }
 
     private void OnEnable() {
 
         _rigidbody = this.GetComponent<Rigidbody2D>();
+        _Animator = this.GetComponent<Animator>();
+        _spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         _Move.Enable();
         _Jump.Enable();
@@ -98,8 +103,8 @@ public class player_moveset : MonoBehaviour
 
         _Jump.performed -= On_Jump;
         _Move.performed -= On_Move;
-    }
 
+    }
 
     /************************************  Update  ************************************/
 
@@ -108,6 +113,7 @@ public class player_moveset : MonoBehaviour
 
         Movement_Update();
         Fall_Manager();
+        Caracter_Orientation();
 
         Ground_detection();
         Enemy_Detection();
@@ -168,9 +174,27 @@ public class player_moveset : MonoBehaviour
 
     private void On_Move(InputAction.CallbackContext context) {
 
-        Debug.Log("ça marche <3");
+        _Animator.SetBool("B_Run", true);
     }
 
+    private void Caracter_Orientation()
+    {
+        if (_rigidbody.velocity.x > 0) {
+
+            _spriteRenderer.flipX = false;
+
+        }
+        else if (_rigidbody.velocity.x < 0) {
+
+            _spriteRenderer.flipX = true;
+        }
+
+        if (_rigidbody.velocity.x == 0) {
+
+            _Animator.SetBool("B_Run", false);
+        }
+
+    }
 
     /************************************  Jump  ************************************/
 
@@ -243,9 +267,7 @@ public class player_moveset : MonoBehaviour
 
         _IsGrounded = false;
         
-        foreach (var Object in Ground_detection) { 
-        
-            Debug.Log( Object.name);    
+        foreach (var Object in Ground_detection) {         
 
             if ( Object.tag == "Ground_World") {
 
@@ -304,6 +326,19 @@ public class player_moveset : MonoBehaviour
 
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Fall_MaxSpeed);
         }
+
+        if (!_IsGrounded)
+        {
+
+            _Animator.SetBool("B_Jump", true);
+
+        }
+        else
+        {
+
+            _Animator.SetBool("B_Jump", false);
+        }
+
     }
 
 

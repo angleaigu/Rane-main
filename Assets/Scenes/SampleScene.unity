@@ -1564,6 +1564,7 @@ GameObject:
   - component: {fileID: 739155009}
   - component: {fileID: 739155012}
   - component: {fileID: 739155011}
+  - component: {fileID: 739155014}
   m_Layer: 9
   m_Name: Kero
   m_TagString: Player
@@ -1612,7 +1613,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9127185f65ec86c458f22a08bddf751d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a8bbd1f4da9d174fbdc2539c3deac32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1698,8 +1699,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012949705, y: -0.25123477}
-  m_Size: {x: 0.39568472, y: 1.5243268}
+  m_Offset: {x: -0.006214142, y: -0.010223508}
+  m_Size: {x: 0.46372223, y: 1.5881417}
   m_Direction: 0
 --- !u!114 &739155013
 MonoBehaviour:
@@ -1733,9 +1734,30 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   Waypoint_Bag: {fileID: 0}
-  Debug_jump: 0
-  Debug_Waypoint_Detector: 0
-  Debug_Enemy_Detector: 0
+  Debug_jump: 1
+  Debug_Waypoint_Detector: 1
+  Debug_Enemy_Detector: 1
+--- !u!95 &739155014
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739155007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57b37de08de808f4682ba2e0f48d6d8e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &782628375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,7 +3260,7 @@ Transform:
   m_GameObject: {fileID: 1760346330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.87, z: 0}
+  m_LocalPosition: {x: 0.012, y: -0.689, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
