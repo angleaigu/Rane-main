@@ -22,7 +22,7 @@ public class player_moveset : MonoBehaviour
 
     /* --- Control --- */
     private Player_manager _player_manager;
-    private InputAction _Move, _Jump;
+    private InputAction _Move, _Jump, _Pause;
     private Vector2 Input_Direction;
 
     /* --- Shortcut --- */
@@ -46,6 +46,9 @@ public class player_moveset : MonoBehaviour
     [Header("Collectible")]
     [SerializeField] private int Coin_Amount;
 
+    /* --- Pause --- */
+    [Header("Pause Setup")]
+    [SerializeField] private Transform Pause_Menue;
 
     /* --- Waypoint --- */
     [Header("Waypoint")]
@@ -74,6 +77,7 @@ public class player_moveset : MonoBehaviour
         _player_manager = new Player_manager();
         _Move = _player_manager.Player.Move;
         _Jump = _player_manager.Player.Jump;
+        _Pause = _player_manager.Player.Pause;
 
         Coin_Amount = 0;
 
@@ -88,14 +92,17 @@ public class player_moveset : MonoBehaviour
 
         _Move.Enable();
         _Jump.Enable();
+        _Pause.Enable();
 
         _Jump.performed += On_Jump;
         _Jump.canceled += Cancel_Jump;
         _Move.performed += On_Move;
+        _Pause.performed += OnPause;
 
         Ground_Check_Position = transform.Find("Overlap_Jump").GetComponent<Transform>();
     }
-  
+
+
     private void OnDisable() {
 
         _Move.Disable();
@@ -342,4 +349,13 @@ public class player_moveset : MonoBehaviour
     }
 
 
+
+    /************************************  Pause  ************************************/
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        Pause_Menue.GetComponent<Script_MainMenu>().Pause_Game();
+    }
+
 }
+
+
