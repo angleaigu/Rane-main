@@ -15219,6 +15219,8 @@ PlayableDirector:
     value: {fileID: 519687206}
   - key: {fileID: 575979912626390281, guid: 53047a96ca58dcc45ac9a36ebce2246c, type: 2}
     value: {fileID: 1163488878}
+  - key: {fileID: 5416900399756557412, guid: 53047a96ca58dcc45ac9a36ebce2246c, type: 2}
+    value: {fileID: 2142566111}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1265079361
@@ -17441,14 +17443,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 847064416051010785, guid: ac6d52f39e8a577449470f6df9c8c339, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142566111}
   m_SourcePrefab: {fileID: 100100000, guid: ac6d52f39e8a577449470f6df9c8c339, type: 3}
 --- !u!114 &1448261146 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3355823082778999159, guid: ac6d52f39e8a577449470f6df9c8c339, type: 3}
   m_PrefabInstance: {fileID: 1448261145}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2142566110}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7d97a8c7f835d49839047f8abb1e77, type: 3}
@@ -25522,6 +25527,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 968526ed93c701940a4b68476594385a, type: 3}
+--- !u!1 &2142566110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847064416051010785, guid: ac6d52f39e8a577449470f6df9c8c339, type: 3}
+  m_PrefabInstance: {fileID: 1448261145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142566111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142566110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3e66dbaf63ef5664487a17d77845f8f0, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1448261146}
+          m_TargetAssemblyTypeName: Script_MainMenu, Assembly-CSharp
+          m_MethodName: Start_Menue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &2144115678
 GameObject:
   m_ObjectHideFlags: 0
@@ -25627,6 +25667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173118618}
     m_Modifications:
+    - target: {fileID: 2300094008548970464, guid: 08b015a129c6ba948b16bb9b56a6b1f6, type: 3}
+      propertyPath: Coin_Amount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300094008548970464, guid: 08b015a129c6ba948b16bb9b56a6b1f6, type: 3}
       propertyPath: Jump_Height
       value: 1000
